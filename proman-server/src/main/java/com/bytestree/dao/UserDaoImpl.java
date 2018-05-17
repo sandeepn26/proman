@@ -1,10 +1,10 @@
 package com.bytestree.dao;
 
+import com.bytestree.model.User;
+
 import org.springframework.stereotype.Repository;
 
-import com.bytestree.model.Users;
-
 @Repository("userDao")
-public class UserDaoImpl extends AbstractDao<Users> implements UserDao {
+public class UserDaoImpl extends AbstractDao<User> {
 
 }

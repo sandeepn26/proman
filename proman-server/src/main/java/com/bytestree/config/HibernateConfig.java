@@ -18,9 +18,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  *
- * @author bytesTree
- * @see <a href="http://www.bytestree.com/">BytesTree</a>
- *
  */
 @Configuration
 @EnableTransactionManagement

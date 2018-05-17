@@ -14,9 +14,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bytestree.dao.UserDao;
+import com.bytestree.dao.AbstractDao;
 import com.bytestree.model.Roles;
-import com.bytestree.model.Users;
+import com.bytestree.model.User;
 
 /**
  * @author sandeep
@@ -28,7 +28,7 @@ import com.bytestree.model.Users;
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
-    UserDao userDao;
+    AbstractDao<User> userDao;
 
     /**
     	 * Method to return UserDetails after successful login
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     	 */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = userDao.findById(username);
+        User user = userDao.findById(username);
 
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username or password");
@@ -46,12 +46,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         return new org.springframework.security.core.userdetails.User(
             username, user.getPassword(), user.getEnabled(),
-            true, true, !user.getLocked(), getAuthorities(user)
+            true, true, !user.getLocked(), null
         );
 
     }
 
-    private List<GrantedAuthority> getAuthorities(Users user) {
+    /*private List<GrantedAuthority> getAuthorities(User user) {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 
         for (Roles role : user.getRoleses()) {
@@ -60,24 +60,29 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         return authorities;
     }
-
+*/
     @Transactional(readOnly = false)
     @Override
     public void saveLastLoginDate(String username) {
-        Users user = userDao.findById(username);
+        User user = userDao.findById(username);
         user.setLastLoginDate(new Date());
         userDao.save(user);
 
     }
 
     @Override
-    public Users getUser(String username) {
+    public User getUser(String username) {
         return userDao.findById(username);
+    }
+
+    @Override
+    public User getUser(Integer id) {
+        return userDao.findById(id);
     }
 
     @Transactional(readOnly = false)
     @Override
-    public void saveUser(Users user) {
+    public void saveUser(User user) {
         userDao.save(user);
 
     }

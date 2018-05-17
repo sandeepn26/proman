@@ -3,7 +3,7 @@
  */
 package com.bytestree.service;
 
-import com.bytestree.model.Users;
+import com.bytestree.model.User;
 
 /**
  * @author Sandeep
@@ -13,7 +13,9 @@ public interface UserService {
 
     void saveLastLoginDate(String username);
 
-    Users getUser(String username);
+    User getUser(String username);
 
-    void saveUser(Users user);
+    void saveUser(User user);
+
+    User getUser(Integer id);
 }

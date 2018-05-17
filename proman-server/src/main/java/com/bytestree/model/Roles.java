@@ -30,7 +30,7 @@ public class Roles implements Serializable {
     @JoinTable(name = "authorities", joinColumns = {
         @JoinColumn(name = "role", nullable = false, updatable = false) }, inverseJoinColumns = {
             @JoinColumn(name = "user", nullable = false, updatable = false) })
-    private Set<Users> users = new HashSet<Users>(0);
+    private Set<User> users = new HashSet<User>(0);
 
     public Roles() {
     }
@@ -40,7 +40,7 @@ public class Roles implements Serializable {
         this.name = name;
     }
 
-    public Roles(int id, String name, Set<Users> users) {
+    public Roles(int id, String name, Set<User> users) {
         this.id = id;
         this.name = name;
         this.users = users;
@@ -62,11 +62,11 @@ public class Roles implements Serializable {
         this.name = name;
     }
 
-    public Set<Users> getUsers() {
+    public Set<User> getUsers() {
         return this.users;
     }
 
-    public void setUsers(Set<Users> users) {
+    public void setUsers(Set<User> users) {
         this.users = users;
     }
 
