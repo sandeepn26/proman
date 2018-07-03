@@ -9,7 +9,7 @@ CREATE TABLE users (
   failed_logins INT NOT NULL,
   enabled TINYINT(1) NOT NULL,
   locked TINYINT(1) NOT NULL,
-  last_login_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'last login date'
+  last_login_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'last login date',
   PRIMARY KEY (user_id),
   UNIQUE INDEX (email)
 );

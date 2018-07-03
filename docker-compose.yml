@@ -10,4 +10,4 @@ services:
       MYSQL_PASSWORD: proman
       MYSQL_DATABASES: proman
     ports:
-      - "15515:3306"
+      - "3306:3306"

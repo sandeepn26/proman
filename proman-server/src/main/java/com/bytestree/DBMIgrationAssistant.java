@@ -13,7 +13,7 @@ public class DBMIgrationAssistant {
     public static void main(String[] args) {
         MysqlDataSource ds = new MysqlDataSource();
         ds.setAllowMultiQueries(true);
-        ds.setURL("jdbc:mysql://localhost:15515/proman");
+        ds.setURL("jdbc:mysql://localhost:3306/proman");
         ds.setUser("proman");
         ds.setPassword("proman");
         Flyway flyway = new Flyway();
