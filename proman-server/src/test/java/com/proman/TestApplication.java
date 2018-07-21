@@ -1,8 +1,9 @@
-package com.bytestree;
+package com.proman;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.bytestree.config.AppConfiguration;
+import com.proman.server.MyApplication;
+import com.proman.server.config.AppConfiguration;
 
 /**
  *

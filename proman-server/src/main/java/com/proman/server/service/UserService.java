@@ -1,9 +1,9 @@
 /**
  *
  */
-package com.bytestree.service;
+package com.proman.server.service;
 
-import com.bytestree.model.User;
+import com.proman.server.model.User;
 
 /**
  * @author Sandeep

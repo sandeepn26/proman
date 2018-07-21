@@ -1,4 +1,4 @@
-package com.bytestree.dao;
+package com.proman.server.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

@@ -1,4 +1,4 @@
-package com.bytestree.model;
+package com.proman.server.model;
 
 import java.io.Serializable;
 import java.util.Date;

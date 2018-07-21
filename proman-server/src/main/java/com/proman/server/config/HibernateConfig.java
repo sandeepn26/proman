@@ -1,4 +1,4 @@
-package com.bytestree.config;
+package com.proman.server.config;
 
 import java.util.Properties;
 
@@ -64,7 +64,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(getDataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.bytestree.model" });
+        sessionFactory.setPackagesToScan(new String[] { "com.proman.server.model" });
         sessionFactory.setHibernateProperties(getHibernateProperties());
         return sessionFactory;
     }

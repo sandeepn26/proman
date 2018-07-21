@@ -1,7 +1,7 @@
-package com.bytestree;
+package com.proman.server;
 
-import com.bytestree.model.User;
-import com.bytestree.service.UserService;
+import com.proman.server.model.User;
+import com.proman.server.service.UserService;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

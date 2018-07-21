@@ -1,4 +1,4 @@
-package com.bytestree.service;
+package com.proman.server.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,9 +14,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bytestree.dao.AbstractDao;
-import com.bytestree.model.Roles;
-import com.bytestree.model.User;
+import com.proman.server.dao.AbstractDao;
+import com.proman.server.model.Roles;
+import com.proman.server.model.User;
 
 /**
  * @author sandeep
