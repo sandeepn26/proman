@@ -8,6 +8,8 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.proman.server.DBMigrationAssistant;
+
 public class AppInitializer implements WebApplicationInitializer {
 
     @Override
@@ -21,6 +23,8 @@ public class AppInitializer implements WebApplicationInitializer {
 
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
+        
+        DBMigrationAssistant.init();
     }
 
 }

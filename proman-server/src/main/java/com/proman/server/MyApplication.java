@@ -10,10 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- *
- * @author bytesTree
- * @see <a href="http://www.bytestree.com/">BytesTree</a>
- *
+ * @author sandeep
  */
 @Component
 public class MyApplication {
