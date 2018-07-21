@@ -1,0 +1,29 @@
+.menu {
+	float: left;
+	width: 100%;
+	background-color: #f0f0f5;
+}
+
+.menu a {
+	color: #2eb8b8;
+    
+}
+.menu a:link {
+	width:300px;
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	color: #2eb8b8;
+    padding: 20px 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #2eb8b8;
+	color: white;
+}
+
+.menu a:active  {
+	background-color: #2eb8b8;
+}

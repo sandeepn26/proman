@@ -1,4 +1,4 @@
-package net.viralpatel.spring.config;
+package com.proman.web.config;
 
 import com.bytestree.config.AppConfiguration;
 
@@ -9,14 +9,18 @@ import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
 @Import({ AppConfiguration.class })
-@ComponentScan(basePackages = "net.viralpatel.spring")
+@ComponentScan(basePackages = "com.proman.web")
 public class WebAppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
@@ -32,5 +36,32 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+    
+    @Bean
+    public TilesConfigurer tilesConfigurer(){
+        TilesConfigurer tilesConfigurer = new TilesConfigurer();
+        tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/tiles/tiles.xml"});
+        tilesConfigurer.setCheckRefresh(true);
+        return tilesConfigurer;
+    }
+    
+    /**
+     * Configure ViewResolvers to deliver preferred views.
+     */
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        TilesViewResolver viewResolver = new TilesViewResolver();
+        registry.viewResolver(viewResolver);
+    }
+     
+    /**
+     * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
+     */
+     
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+ 
 
 }

@@ -1,4 +1,4 @@
-package net.viralpatel.spring.controller;
+package com.proman.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
