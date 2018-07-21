@@ -6,10 +6,7 @@ import com.proman.server.MyApplication;
 import com.proman.server.config.AppConfiguration;
 
 /**
- *
- * @author bytesTree
- * @see <a href="http://www.bytestree.com/">BytesTree</a>
- *
+ * @author sandeep
  */
 public class TestApplication {
 

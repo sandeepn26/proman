@@ -23,7 +23,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "error";
         }
-        // model.addAttribute("name", user.getUsername());
+        model.addAttribute("name", user.getUsername());
         
         com.proman.server.model.User dbuser = new com.proman.server.model.User();
         dbuser.setUsername(user.getUsername());

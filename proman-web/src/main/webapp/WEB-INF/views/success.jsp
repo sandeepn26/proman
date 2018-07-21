@@ -1,1 +1,1 @@
-<p>${name}</p>
+<h2>User ${name} has been successfully created!!!</h2>

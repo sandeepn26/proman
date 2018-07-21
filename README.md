@@ -1,31 +1,41 @@
-Setup
-Install Java 1.8 and set up JAVA_HOME
+# Proman
 
-Install maven
+[Change log](CHANGELOG.md).
 
-Install MySQL 5.6.x community server
+## Setup
+- Install Java 1.8 and set up JAVA_HOME
 
-Install git
+- Install maven
 
-create a directory projects
+- Install MySQL 5.6.x community server
 
-in projects, `git clone https://github.com/sandeepn26/proman.git`
+- Download tomcat 8.x and setup CATALINA_HOME
 
-Download tomcat 8.x and setup CATALINA_HOME
+- Install git
 
+- create a directory projects
 
-Running locally
+- in projects, `git clone https://github.com/sandeepn26/proman.git`
 
-clone
+## Running locally
 
-To test this use :
+- If you setup a password for the root user while installing mysql, update the docker-compose.yml and the initdb.cmd and initdb.sh file with the root user password.
 
-http://localhost:8080/app/hello
+- If the OS does not support docker, run initdb.cmd initdb.sh depending on your OS.
 
-To deploy:
+- If your OS supports docker, `docker-compose up` from the proman (parent)
 
-mvn tomcat7:run
+- cd proman `mvn clean install`
 
-When deployed directly, use
+- Copy the proman war file from `\projects\proman\proman-web\target\proman.war` to tomcat webapps directory
 
-`http://localhost:8080/proman/home`
+- start the tomcat from the tomcat bin directory
+
+- From the browser navigate to http://localhost:8080/proman/signup
+
+## Testing
+
+- Enter a username password and retype password and click create account.
+
+- Ensure the you see the success page.
+
