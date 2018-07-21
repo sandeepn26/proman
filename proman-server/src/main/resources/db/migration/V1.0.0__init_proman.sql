@@ -4,11 +4,11 @@
 CREATE TABLE users (
   user_id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(80) NOT NULL,
-  display_name VARCHAR(50) NOT NULL,
+  display_name VARCHAR(50) NULL,
   password CHAR(41) NOT NULL,
-  failed_logins INT NOT NULL,
-  enabled TINYINT(1) NOT NULL,
-  locked TINYINT(1) NOT NULL,
+  failed_logins INT NOT NULL DEFAULT 0,
+  enabled TINYINT(1) NOT NULL DEFAULT 1,
+  locked TINYINT(1) NOT NULL DEFAULT 0,
   last_login_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'last login date',
   PRIMARY KEY (user_id),
   UNIQUE INDEX (email)

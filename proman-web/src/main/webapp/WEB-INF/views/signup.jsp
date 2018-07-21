@@ -1,21 +1,21 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div class="content">
-	<form action="#" class="signupform">
-
+<form:form method="POST"
+          action="addUser" class="signupform" modelAttribute="user">
 		<table>
 			<tr>
-				<td><input type="text" placeholder="Username*" name="usrname"
-					required></td>
+				<td><form:input type="text" placeholder="Username*" name="username" path="username"/></td>
 			</tr>
 			<tr>
-				<td><input type="password" placeholder="Password*" /></td>
+				<td><form:input type="password" placeholder="Password*" path="password"/></td>
 			</tr>
 			<tr>
-				<td><input type="password" placeholder="retype password*" /></td>
+				<td><form:input type="password" placeholder="retype password*" path="retypedpassword"/></td>
 			</tr>
 			<tr>
-				<td><a href="signin">create account</a></td>
+				<!-- <td><a href="signin">create account</a></td> -->
+				<td><input type="submit" value="create account"/></td>
 			</tr>
 		</table>
-	</form>
-
+	</form:form>
 </div>

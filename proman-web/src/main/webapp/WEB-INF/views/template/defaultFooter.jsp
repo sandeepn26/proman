@@ -1,3 +1,3 @@
-<div>
-  Made in this world.
+<div class="footer">
+  &copy; 2018 proman.com
 </div>

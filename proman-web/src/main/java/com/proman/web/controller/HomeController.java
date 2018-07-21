@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.proman.web.model.User;
+
 @Controller
 public class HomeController {
 
@@ -37,6 +39,9 @@ public class HomeController {
     
     @RequestMapping(value = { "/signup"}, method = RequestMethod.GET)
     public String signUp(ModelMap model) {
+    	User user = new User();
+		model.addAttribute("user", user);
+		
         return "signup";
     }
 }

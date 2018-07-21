@@ -33,10 +33,10 @@ public class User implements Serializable {
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
-    @Column(name = "display_name", nullable = false, length = 100)
+    @Column(name = "display_name",  nullable = true, length = 100)
     private String displayName;
 
-    @Column(name = "failed_logins")
+    @Column(name = "failed_logins", nullable = true)
     private Integer failedLogins;
 
     @Column(name = "enabled")
@@ -47,12 +47,6 @@ public class User implements Serializable {
 
     @Column(name = "last_login_date", length = 23)
     private Date lastLoginDate;
-
-    /*@ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "authorities", joinColumns = {
-        @JoinColumn(name = "user", nullable = false, updatable = false) }, inverseJoinColumns = {
-            @JoinColumn(name = "role", nullable = false, updatable = false) })
-    private Set<Roles> roleses = new HashSet<Roles>(0);*/
 
     public User() {
     }
