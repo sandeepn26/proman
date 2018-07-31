@@ -71,8 +71,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User getUser(String username) {
-        return userDao.findById(username);
+    public List<User> getUser(String username) {
+        return userDao.findByCriteria("username", username);
     }
 
     @Override
@@ -86,5 +86,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userDao.save(user);
 
     }
+
+	@Override
+	public List<User> fetchAll() {
+		return userDao.findAll();
+	}
 
 }

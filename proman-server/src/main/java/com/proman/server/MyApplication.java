@@ -1,13 +1,10 @@
 package com.proman.server;
 
-import com.proman.server.model.User;
-import com.proman.server.service.UserService;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import com.proman.server.service.UserService;
 
 /**
  * @author sandeep

@@ -16,6 +16,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.beans.BeanUtils;
+
+import com.proman.server.dto.UserDTO;
+
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -127,5 +131,11 @@ public class User implements Serializable {
     public void setRoleses(Set<Roles> roleses) {
         this.roleses = roleses;
     }*/
+    
+    public UserDTO getUserDTO() {
+    	UserDTO dto = new UserDTO();
+    	BeanUtils.copyProperties(this, dto);
+    	return dto;
+    }
 
 }

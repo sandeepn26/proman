@@ -51,10 +51,10 @@
 			value="/WEB-INF/views/personalinfo.jsp" />
 	</definition>
 	
-	<definition name="editpersonalinfo" extends="app-definition">
-		<put-attribute name="title" value="Personal Info" />
+	<definition name="usersearch" extends="app-definition">
+		<put-attribute name="title" value="Search User" />
 		<put-attribute name="body"
-			value="/WEB-INF/views/personalinfo.jsp" />
+			value="/WEB-INF/views/usersearch.jsp" />
 	</definition>
 
 	<!-- Product Page <definition name="products" extends="base-definition"> 

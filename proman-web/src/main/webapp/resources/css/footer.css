@@ -1,0 +1,12 @@
+.footer{
+	height: 50px;
+	width: 100%;
+	border-top: 1px solid #e6e6e6;
+	text-align: center;
+	font-family: 'Signika', sans-serif;
+	padding-top: 20px;
+	font-size: 13px;
+	color: #8c8c8c;
+	postition: fixed;
+	bottom: 0;
+}

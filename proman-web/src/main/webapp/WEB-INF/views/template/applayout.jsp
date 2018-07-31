@@ -10,12 +10,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title><tiles:getAsString name="title" /></title>
-<link href="<c:url value='/resources/css/styles.css' />"
-	rel="stylesheet"></link>
-<link href="https://fonts.googleapis.com/css?family=Chela+One|Galada|Julius+Sans+One|Merienda|Raleway|Signika" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chela+One|Galada|Julius+Sans+One|Merienda|Raleway|Signika|Open+Sans|Montserrat|Source+Sans+Pro|Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chela+One|Galada|Julius+Sans+One|Merienda|Raleway|Signika|Open+Sans|Source+Sans+Pro|Noto+Sans|Poppins|Roboto|Arimo|Montserrat" rel="stylesheet">
+  
 <link rel="stylesheet" href="/proman/resources/css/navbar.css">
 <link rel="stylesheet" href="/proman/resources/css/forms.css">
 <link rel="stylesheet" href="/proman/resources/css/datepicker.css">
+<link rel="stylesheet" href="/proman/resources/css/search.css">
+<link rel="stylesheet" href="/proman/resources/css/footer.css">
 </head>
 
 <body>

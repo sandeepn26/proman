@@ -1,12 +1,19 @@
 package com.proman.web.model;
 
+import javax.validation.constraints.Pattern;
+
+import com.proman.web.validator.ValidationConstants;
+
 public class User {
 
-    private String username;
+	@Pattern(regexp = ValidationConstants.USERNAME_PATTERN, message = "Username must have letters numbers and special characters - , _ , and @")
+    private String username = null;
 
-	private String password;
+	@Pattern(regexp = ValidationConstants.USERNAME_PATTERN, message = "invalid password")
+	private String password = null;
 
-    private String retypedpassword;
+	@Pattern(regexp = ValidationConstants.USERNAME_PATTERN, message = "invalid password")
+    private String retypedpassword = null;
 
     public String getUsername() {
         return this.username;

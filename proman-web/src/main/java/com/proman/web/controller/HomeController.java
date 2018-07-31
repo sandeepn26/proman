@@ -1,5 +1,7 @@
 package com.proman.web.controller;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +40,7 @@ public class HomeController {
     }
     
     @RequestMapping(value = { "/signup"}, method = RequestMethod.GET)
-    public String signUp(ModelMap model) {
+    public String signUp(Locale locale, ModelMap model) {
     	User user = new User();
 		model.addAttribute("user", user);
 		
