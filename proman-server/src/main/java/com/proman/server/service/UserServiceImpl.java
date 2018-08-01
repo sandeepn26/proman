@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.proman.server.dao.AbstractDao;
-import com.proman.server.model.Roles;
+import com.proman.server.model.Role;
 import com.proman.server.model.User;
 
 /**

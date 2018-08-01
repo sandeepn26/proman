@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.BeanUtils;
@@ -32,7 +35,7 @@ public class User implements Serializable {
     private Integer userId;
 
     @Column(name = "email", unique = true, nullable = false, length = 100)
-    private String username;
+    private String email;
 
     @Column(name = "password", nullable = false, length = 100)
     private String password;
@@ -51,12 +54,28 @@ public class User implements Serializable {
 
     @Column(name = "last_login_date", length = 23)
     private Date lastLoginDate;
+    
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
+    private Role role;
+    
+    @OneToMany(mappedBy="userDetails")
+    private Set<UserDetails> userDetails;
+    
+    public Role getRole() {
+		return role;
+	}
 
-    public User() {
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public User() {
     }
 
     public User(String username, String password) {
-        this.username = username;
+        this.email = username;
         this.password = password;
     }
 
@@ -66,7 +85,7 @@ public class User implements Serializable {
             String displayName
     // Set<Roles> roleses
     ) {
-        this.username = username;
+        this.email = username;
         this.password = password;
         this.failedLogins = failedLogins;
         this.enabled = enabled;
@@ -77,11 +96,11 @@ public class User implements Serializable {
     }
 
     public String getUsername() {
-        return this.username;
+        return this.email;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.email = username;
     }
 
     public String getPassword() {
