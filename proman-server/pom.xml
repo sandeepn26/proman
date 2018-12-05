@@ -86,6 +86,14 @@
             <artifactId>flyway-core</artifactId>
             <version>4.2.0</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.github.wwadge/hbnpojogen-persistence -->
+<dependency>
+    <groupId>com.github.wwadge</groupId>
+    <artifactId>hbnpojogen-persistence</artifactId>
+    <version>1.5.11</version>
+</dependency>
+        
 	</dependencies>
 
 	<build>
